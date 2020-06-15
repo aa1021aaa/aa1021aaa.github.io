@@ -1,0 +1,62 @@
+<style>
+header a:link {text-decoration:none;}
+header a:visited {text-decoration:none;}
+
+body {
+
+background-image: url('image/배경1.jpg');
+margin: 0px;
+
+}
+
+header{
+
+background-image:url('image/헤더.jpg');
+margin: 10px;
+
+text-align: center;
+
+padding:10px;
+
+}
+
+ul li a{
+font-family:Sans-serif,Geneva,Arial,Verdana;
+text-decoration: none;
+color: purple;
+}
+
+ul li a:hover{
+text-decoration: underline;
+
+}
+
+.menubar li{
+display: inline;
+font-family:Sans-serif,Geneva,Arial,Verdana;
+margin: 10;
+padding: 10px;
+}
+nav{
+display: table-cell;
+font-family:Sans-serif,Geneva,Arial,Verdana;
+vertical-align: top;
+padding: 15px;
+}
+
+h3{
+ font-family:Sans-serif,Geneva,Arial,Verdana;
+
+}
+
+footer{
+background-color:gray;
+color: white;
+text-align: center;
+padding: 10px;
+margin: 0px 0px 0px 0px;
+font-size: 90%;
+}
+
+
+</style>

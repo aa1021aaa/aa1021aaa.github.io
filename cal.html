@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박채원 BLOG</title>
+    <link type="text/css" rel="stylesheet" href="mystyle.css">
+    <style>
+    header a:link {text-decoration:none;}
+    header a:visited {text-decoration:none;}
+
+    body{
+        background-image: url("image/배경1.jpg");
+        margin: 0px;
+    }
+    header{
+
+
+    margin: 10px;
+
+    text-align: center;
+
+    padding:10px;
+
+    }
+
+    ul,li{
+		padding:0;
+		list-style: none;
+	}
+	
+	.navi { 
+		height: 40px; 
+		padding: 0; 
+		margin: 0; 
+	}
+	
+	.navi > li { 
+		float: right; 
+		position: relative; 
+		padding: 0; 
+		line-height: 40px; 
+		background:rgb(136, 162, 202);
+	}
+	
+	.navi li a { 
+		display: block; 
+		font-family:"굴림"; 
+		font-weight:600; 
+		font-size:14px;
+		padding: 5px 25px; 
+		color: #fff;
+		text-decoration: none; 
+	}
+​
+	.navi li a:hover {
+		color:#F90;
+	}
+​
+	.navi li ul {
+		display:none;
+	}
+	
+	.navi li ul li{
+		background-color:#d3a6a5 ;
+		position:absolute;
+		width:164px;
+	}
+
+
+
+    .menubar li{
+    display: inline;
+    font-family:sans-serif;
+    margin: 10;
+    padding: 10px;
+    }
+
+    section#main{
+    display: table-cell;
+
+    padding: 100px;
+    }
+
+    nav{
+    display: table-cell;
+    font-family:Sans-serif;
+    vertical-align: top;
+    padding: 15px;
+    }
+
+    h3{
+    font-family:Sans-serif;
+
+    }
+
+    footer{
+    background-color:gray;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0px 0px 0px 0px;
+    font-size: 90%;
+    }
+    </style>
+</head>
+<script language="javascript"> 
+
+function get_Time(){ 
+  var now=new Date(); 
+  var hour=now.getHours(); 
+  var minute=now.getMinutes(); 
+  var ampm; 
+  now=null; 
+  if(hour>=12){ 
+    hour-=12; 
+    ampm="Pm"; 
+    }else{   
+    ampm="Am"; 
+ } 
+ hour=(hour==0)?12:hour; 
+ if(minute<10) minute="0"+minute; 
+ return ampm + hour + ":" + minute; 
+} 
+
+function get_Day(year,month){ 
+  var Last_Mon = new Array(31,29,31,30,31,30,31,31,30,31,30,31); 
+  var Mon2; 
+  if(year%4==0){ 
+    Mon2=true; 
+    }else{ 
+    Mon2=false; 
+ } 
+ Last_Mon[1]=(Mon2)?29:28;  
+ return Last_Mon[month] 
+} 
+
+function drawCal(firstDay,lastDate,date,year,monthName){  
+  var text=""; 
+  text+="<center>"; 
+  text+="<table>"; 
+  text+="<th colspan=7 bfcolor=#CEF279>"; 
+  text+="<font color=#A566FF size=5>"; 
+  text+= year + "년" + (monthName+1) + "월"; 
+  text+="</font>"; 
+  text+="</th>"; 
+  var openCol="<td bgfcolor=#86E57F width=45 height=40>"; 
+  openCol+="<font color=darkblue>"; 
+  var closeCol="</font></td>"; 
+  text+="<tr align=center valign=center>"; 
+  var weekDay=new Array("일","월","화","수","목","금","토") 
+  
+  for(var dayNum=0;dayNum<=6;dayNum++){  
+    text+=openCol+weekDay[dayNum]+closeCol; 
+ }          
+ text+="</tr>"; 
+ var digit=1; 
+ var curCell=1; 
+ for(var row=1;row<=Math.ceil((lastDate+firstDay-1)/7);++row){ 
+   text+="<tr align=right valign=top bgcolor=#86E57F>"; 
+   for(var col=1;col<=7;col++){   
+     if(digit>lastDate) break; 
+     if(curCell<firstDay){ 
+       text+="<td>&nbsp;</td>"; 
+       curCell++; 
+       }else{ 
+       if(digit==date){ 
+         text+="<td height=50>"; 
+         text+="<font color=red>"; 
+         text+=digit; 
+         text+="</font><br>"; 
+         text+="<font color=purple size=2>"; 
+         text+="<center>"+ get_Time() +"</center>"; 
+         text+="</font>"; 
+         text+="</td>"; 
+         }else{ 
+         text+="<td height=40>"+digit+"</td>"; 
+         
+      } 
+      digit++; 
+   } 
+} 
+text+="</tr>" 
+} 
+text+="</table>"; 
+text+="</center>"; 
+return text; 
+} 
+</script> 
+</head>
+<body>
+  <header>
+      <a href="index.html"></a>
+      <img src="image/헤더.png">
+  </header>
+  <ul class="navi" align="center">
+      <li> <a href="index.html"> HOME </a></li>
+      <li> <a href="profile.html"> PROFILE </a></li>
+      <li> <a href="hobby.html"> HOBBY </a></li>
+      <li> <a href="photo.html"> PHOTO </a></li>
+      <li> <a href="cal.html"> CALENDAR </a></li>
+      <li> <a href="join.html"> JOIN </a></li>
+  </ul>
+  <nav>
+      <aside id="left">
+      
+      <img width="200" height="250" src="image/채원.JPG" alt="profile"/>
+      </a>
+      <h3> #PARK CHAE WON</h3>
+      
+      <p> #THE DAILY LIFE </p>
+       <br>
+      
+      <h3>#CATEGORY</h3>
+      <ul>
+      <li><a href="france.html">FRANCE</a></li>
+      <li><a href="swiss.html">SWITZERLAND</a></li>
+      <li><a href="uk.html">UNITED KINGDOM</a></li>
+      </ul>
+      
+      </aside>
+      </nav>
+<section id="calendar">
+<p><b> #CALENDAR </b></p>
+<hr>
+<script language="javascript"> 
+var now=new Date(); 
+var year=now.getYear(); 
+var month=now.getMonth(); 
+var date=now.getDate(); 
+var my_text; 
+now=null; 
+if(navigator.userAgent.indexOf("MSIE")==-1){ 
+  year=1900+year; 
+} 
+var firstDayInstance=new Date(year,month,1)
+var firstDay=firstDayInstance.getDay()+1; 
+firstDayInstance=null; 
+var days=get_Day(year,month); 
+my_text=drawCal(firstDay,days,date,year,month); 
+document.write(my_text); 
+</script> 
+<hr>
+</section>
+<footer> COPYLIGHT (c) PARK CHAE WON_박채원  </footer>
+</body>
+</html>
